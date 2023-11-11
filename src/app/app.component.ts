@@ -18,6 +18,7 @@ export class AppComponent implements OnInit {
     { title: 'Playthrough', path: '/playthrough' },
     { title: 'Achievements', path: '/achievements' },
   ];
+  navbarCollapsed = true;
   hideCompleted: boolean = false;
 
   constructor(public route: ActivatedRoute, private localStorage: LocalStorageService) {}
