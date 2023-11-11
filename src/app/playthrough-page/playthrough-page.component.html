@@ -1,1 +1,311 @@
-<p>playthrough-page works!</p>
+<!-- Toolbar -->
+<h2>Filter Checklist
+  <div class="btn-group" role="group" aria-label="Journey">
+    <button type="button" class="btn btn-secondary" data-ng-toggle="1">NG</button>
+    <button type="button" class="btn btn-primary" data-ng-toggle="2">NG+</button>
+    <button type="button" class="btn btn-primary" data-ng-toggle="3">NG++</button>
+  </div>
+</h2>
+
+<div class="btn-group me-3">
+  <div class="btn-group" ngbDropdown role="group" aria-label="Button group with nested dropdown">
+    <button type="button" class="btn btn-outline-danger" ngbDropdownToggle>Quests</button>
+    <div class="dropdown-menu" ngbDropdownMenu>
+      <button ngbDropdownItem>Bosses</button>
+      <button ngbDropdownItem>Missable</button>
+      <button ngbDropdownItem>NPCs</button>
+    </div>
+  </div>
+  <div class="btn-group" ngbDropdown role="group" aria-label="Button group with nested dropdown">
+    <button type="button" class="btn btn-outline-success" ngbDropdownToggle>Upgrades</button>
+    <div class="dropdown-menu" ngbDropdownMenu>
+      <button ngbDropdownItem>Estus Shards</button>
+      <button ngbDropdownItem>Undead Bone Shards</button>
+      <button ngbDropdownItem>Scrolls / Tomes</button>
+      <button ngbDropdownItem>Coals</button>
+      <button ngbDropdownItem>Ashes</button>
+    </div>
+  </div>
+  <div class="btn-group" ngbDropdown role="group" aria-label="Button group with nested dropdown">
+    <button type="button" class="btn btn-outline-success" ngbDropdownToggle>Achievements</button>
+    <div class="dropdown-menu" ngbDropdownMenu>
+      <button ngbDropdownItem>Gestures</button>
+      <button ngbDropdownItem>Sorceries</button>
+      <button ngbDropdownItem>Pyromancies</button>
+      <button ngbDropdownItem>Miracles</button>
+      <button ngbDropdownItem>Rings</button>
+    </div>
+  </div>
+  <div class="btn-group" ngbDropdown role="group" aria-label="Button group with nested dropdown">
+    <button type="button" class="btn btn-outline-success" ngbDropdownToggle>Gear</button>
+    <div class="dropdown-menu" ngbDropdownMenu>
+      <button ngbDropdownItem>Weapons</button>
+      <button ngbDropdownItem>Armors</button>
+    </div>
+  </div>
+  <div class="btn-group" ngbDropdown role="group" aria-label="Button group with nested dropdown">
+    <button type="button" class="btn btn-outline-success" ngbDropdownToggle>Materials</button>
+    <div class="dropdown-menu" ngbDropdownMenu>
+      <button ngbDropdownItem>Titanite Shards</button>
+      <button ngbDropdownItem>Gems</button>
+    </div>
+  </div>
+  <div class="btn-group" ngbDropdown role="group" aria-label="Button group with nested dropdown">
+    <button type="button" class="btn btn-outline-success" ngbDropdownToggle>Others</button>
+    <div class="dropdown-menu" ngbDropdownMenu>
+      <button ngbDropdownItem>Convenants</button>
+      <button ngbDropdownItem>Misc. Items</button>
+    </div>
+  </div>
+</div>
+
+<h2>Playthrough Checklist <span id="playthrough_overall_total"></span></h2>
+<ul class="table_of_contents">
+  <li><a href="#Cemetery_of_Ash">Cemetery of Ash</a> <span id="playthrough_nav_totals_17"></span></li>
+  <li><a href="#new_game">New Game</a> <span id="playthrough_nav_totals_1"></span></li>
+  <li><a href="#new_game_p">New Game+</a> <span id="playthrough_nav_totals_2"></span></li>
+  <li><a href="#new_game_pp">New Game+2</a> <span id="playthrough_nav_totals_3"></span></li>
+  <li><a href="#queelag">Soul of Chaos witch Queelag</a> <span id="playthrough_nav_totals_4"></span></li>
+  <li><a href="#moonlight_butterfly">Soul of the Moonlight Butterfly</a> <span id="playthrough_nav_totals_5"></span></li>
+  <li><a href="#iron_Golem">Core of the Iron Golem</a> <span id="playthrough_nav_totals_6"></span></li>
+  <li><a href="#gwyndolin">Soul of Gwyndolin</a> <span id="playthrough_nav_totals_7"></span></li>
+  <li><a href="#ornstein">Soul of Ornstein</a> <span id="playthrough_nav_totals_8"></span></li>
+  <li><a href="#smough">Soul of Smough</a> <span id="playthrough_nav_totals_9"></span></li>
+  <li><a href="#priscilla">Soul of Priscilla</a> <span id="playthrough_nav_totals_10"></span></li>
+  <li><a href="#gwyn">Soul of Gwyn, Lord of Cinder</a> <span id="playthrough_nav_totals_11"></span></li>
+  <li><a href="#great_sif">Soul of Great Grey Wolf Sif</a> <span id="playthrough_nav_totals_12"></span></li>
+</ul>
+
+<div class="form-group">
+  <input type="search" id="playthrough_search" class="form-control" placeholder="Start typing to filter results..." />
+</div>
+
+<div>
+  I recently completed Dark Souls Remastered 100% by earning the "the dark soul" achievement. Since I found it very hard to find a complete guide online, I took it upon myself to create one. A few things right off the bat though:
+  <ol>
+    <li>I will not be including the location of all the titanite chunks (colored as well as regular) needed. However, they can easily be farmed from the Black knights in the Kiln of the first flame.</li>
+    <li>I suggest you get all of the spells in new game + since you'll have far more souls than you'll have in new game.</li>
+    <li>In total you'll require 216 titanite shards, 163 large titanite shards, 27 titanite chunks, 3 titanite slabs, 17 of every colored titanite chunk, 2 of every colored titanite slab as well as 31 green titanite shards. Look at this page to learn all about titanite farming as well as all of the locations of the slabs you'll need.</li>
+    <li>You'll have to play through the game 2 1/2 times to get all the boss souls required for all of the boss weapons. I will add a chart to what weapons you need for ascencion to boss weapons at the end of the guide.</li>
+    <li>For the sake of this guide I'll assume that your weapons are upgraded as well as they possibly can be from the point you meet Andre on. I will also assume that you have enough souls to purchase all of the items required to get all of the achievements.</li>
+  </ol>
+  Without further ado, let's get into the guide!
+</div>
+
+<div id="playthrough_list">
+
+<h3 id="Cemetery_of_Ash"><a href="#Cemetery_of_Ash_col" data-toggle="collapse" class="btn btn-primary btn-collapse btn-sm"></a><a href="http://darksouls3.wiki.fextralife.com/Cemetery+of+Ash">Cemetery of Ash</a> <span id="playthrough_totals_17"></span></h3>
+<ul id="Cemetery_of_Ash_col" class="collapse in">
+  <li data-id="playthrough_17_1" class="f_misc">From the start head right at the first turn and pick up the <a href="http://darksouls3.wiki.fextralife.com/Soul+of+a+Deserted+Corpse">Soul of a Deserted Corpse</a></li>
+  <li data-id="playthrough_17_2" class="f_estus h_ng+">Loot the corpse on the fountain to obtain the <a href="http://darksouls3.wiki.fextralife.com/Ashen+Estus+Flask">Ashen Estus Flask</a></li>
+  <li data-id="playthrough_17_3" class="f_misc f_tit">Turn right after the fountain and head down the path through a flooded passage. Kill the <a href="http://darksouls3.wiki.fextralife.com/Ravenous+Crystal+Lizard">Ravenous Crystal Lizard</a> to get a <a href="http://darksouls3.wiki.fextralife.com/Titanite+Scale">Titanite Scale</a> and then pick up the <a href="http://darksouls3.wiki.fextralife.com/Soul+of+an+Unknown+Traveler">Soul of an Unknown Traveler</a> from the corpse in the area</li>
+  <li data-id="playthrough_17_16" class="f_ring s_ng+">The <a href="https://darksouls3.wiki.fextralife.com/Speckled+Stoneplate+Ring">Speckled Stoneplate Ring+1</a> is also in this area</li>
+  <li data-id="playthrough_17_4" class="f_gest">Head back to the fountain and take the path straight ahead. Climb the cliff and rest at the Cemetery of Ash bonfire to receive the Rest gesture</li>
+  <li data-id="playthrough_17_5" class="f_tit">From the bonfire head down the left path and jump from the cliff over to the corpse on the tomb to pick up a <a href="http://darksouls3.wiki.fextralife.com/Titanite+Shard">Titanite Shard</a></li>
+  <li data-id="playthrough_17_6" class="f_misc">Take the side ridge down from the large cliff face on the right to pick up <a href="http://darksouls3.wiki.fextralife.com/Firebomb">Firebomb&nbsp;x5</a> from a nearby corpse</li>
+  <li data-id="playthrough_17_7" class="f_boss f_misc">Back on the main path head through the archway and take the sword embedded in the statue. Kill <a href="http://darksouls3.wiki.fextralife.com/Iudex+Gundyr">Iudex Gundyr</a> to receive the <a href="http://darksouls3.wiki.fextralife.com/Coiled+Sword">Coiled Sword</a></li>
+  <li data-id="playthrough_17_8" class="f_none">Congratulate yourself on beating the first boss of Dark Souls 3 and rest at the <a href="http://darksouls3.wiki.fextralife.com/Iudex+Gundyr">Iudex Gundyr</a> bonfire</li>
+  <li data-id="playthrough_17_9" class="f_weap">Continue through the large door and pick up the <a href="http://darksouls3.wiki.fextralife.com/Broken+Straight+Sword">Broken Straight Sword</a> from the corpse leaning on the tombstone</li>
+  <li data-id="playthrough_17_17" class="f_ring s_ng++">The <a href="https://darksouls3.wiki.fextralife.com/Wolf+Ring">Wolf Ring+2</a> is behind the door you just passed</li>
+  <li data-id="playthrough_17_10" class="f_misc">Head over to the large cliff edge and pick up the <a href="http://darksouls3.wiki.fextralife.com/Homeward+Bone">Homeward Bone</a> at the edge of the ridge</li>
+  <li data-id="playthrough_17_11" class="f_weap">Take the left path up the cliff and turn left just before <a href="http://darksouls3.wiki.fextralife.com/Firelink+Shrine">Firelink Shrine</a> and grab the <a href="http://darksouls3.wiki.fextralife.com/East-West+Shield">East-West Shield</a> from the corpse on the tree</li>
+  <li data-id="playthrough_17_12" class="f_arm f_weap f_miss">Kill <a href="http://darksouls3.wiki.fextralife.com/Sword+Master">Sword Master Saber</a> to get <a href="http://darksouls3.wiki.fextralife.com/Uchigatana">Uchigatana</a><span class="p"> + </span><a href="http://darksouls3.wiki.fextralife.com/Master's+Set">Master's Set</a> and to unlock his summon sign</li>
+  <li data-id="playthrough_17_13" class="f_misc">Head back and up the path to the left to pick up an <a href="http://darksouls3.wiki.fextralife.com/Ember">Ember</a> from a corpse above the entrance above <a href="http://darksouls3.wiki.fextralife.com/Firelink+Shrine">Firelink Shrine</a></li>
+  <li data-id="playthrough_17_14" class="f_misc">Continue across to the other side picking up a <a href="http://darksouls3.wiki.fextralife.com/Homeward+Bone">Homeward Bone</a> from a corpse behind a tomb and another <a href="http://darksouls3.wiki.fextralife.com/Ember">Ember</a> from the lower ridge </li>
+  <li data-id="playthrough_17_15" class="f_none">Go back to the main path and enter <a href="http://darksouls3.wiki.fextralife.com/Firelink+Shrine">Firelink Shrine</a></li>
+</ul>
+
+<h3 id="new_game"><a href="#new_game_col" data-toggle="collapse" class="btn btn-primary btn-collapse btn-sm"></a><a href="http://darksouls3.wiki.fextralife.com/Cemetery+of+Ash">New Game</a> <span id="playthrough_totals_1"></span></h3>
+<ul id="new_game_col" class="collapse in">
+  <li data-id="playthrough_1_1" class="f_npc f_estus">Wake up in the <a hraf="https://darksouls.wiki.fextralife.com/Northern+Undead+Asylum">Undead Asylum</a>, get your starting equipment and your estus flask from <a hraf="https://darksouls.wiki.fextralife.com/Oscar+of+Astora">Oscar of Astora</a>. Wether you kill him or not is up to you, but if you do I want you to know that you're a monster.</li>
+  <li data-id="playthrough_1_2" class="f_boss">Whoop the Asylum Demon's ass.</li>
+  <li data-id="playthrough_1_3" class="f_npc">Arrive in Lordran and enter the Way of White through Petrus of Thorolund. Buy all of his Miracles. (Heal, Great Heal Exerpt, Homeward, Force)</li>
+  <li data-id="playthrough_1_4" class="f_boss f_misc">Make your way through the Undead Burg and beat the Taurus Demon, but not before purchasing the Residence Key from the Undead Merchant (male).</li>
+  <li data-id="playthrough_1_5" class="f_weap">Trigger the Drake on the Bridge and shoot it's Tail off with a Bow to get the Drake Sword.</li>
+  <li data-id="playthrough_1_6" class="f_none">You can try to get to the Sunlight Altar now if you want, but I'd recommend attempting it later when you have a bit more hp. This can easily be done by staying near him but out of his line of sight for a while. He'll fly onto the bridge and stay there for a few seconds if you're lucky. This is when you make a dash towards the Sunlight Altar.</li>
+  <li data-id="playthrough_1_7" class="f_none">If possible, enter the Warrior of Sunlight covenant to receive the Lightning Spear miracle. To enter the Covenant, 25 faith are required. Alternatively, the entry bar is lowered by 5 levels of faith for every boss that you help defeat in co-op.</li>
+  <li data-id="playthrough_1_8" class="f_none">Make your way through the Undead Burg and meet Andre. Make sure to grab the Mystery Key. Alsp grab the basement key on the steps in front of the church.</li>
+  <li data-id="playthrough_1_9" class="f_npc">Free Lautrec.</li>
+  <li data-id="playthrough_1_10" class="f_boss f_weap">Beat the Bell Gargoyles while making sure to cut off the Tail off the first one that spawns to receive the Gargoyle Tail Axe. If you just can't do it, don't worry, you'll get a third and fourth chance later on.</li>
+  <li data-id="playthrough_1_11" class="f_none">Ring the Bell of Awakening. After that, purchase Karmic Justice from Oswald of Carim.</li>
+  <li data-id="playthrough_1_12" class="f_none">Speak to Lautrec to receive a Sunlight Medal. He'll kill the firekeeper after a while, but don't worry about it, you can revive her later. Just make sure to grab the Black eye orb you get from her corpse. Killing him at Firelink Shrine won't have any bad impact on the run and prevent him from Killing Anastasia (The Firekeeper). The only things you gain from not killing him is Anastasia's Armor set and a Souvenir of Reprisal. Anastasia will also regain the ability to speak after returning her soul to her.</li>
+  <li data-id="playthrough_1_13" class="f_arm">Revisit the <a hraf="https://darksouls.wiki.fextralife.com/Northern+Undead+Asylum">Undead Asylum</a>. Kill <a hraf="https://darksouls.wiki.fextralife.com/Oscar+of+Astora">Oscar of Astora</a> to get the Crest Shield.</li>
+  <li data-id="playthrough_1_14" class="f_none">Get the Peculiar Doll (this item is required to enter the painted world) and kill the Stray Demon. He'll drop a Titanite Slab for you. You can do this at any point in the playthrough after leaving the <a hraf="https://darksouls.wiki.fextralife.com/Northern+Undead+Asylum">Undead Asylum</a>, don't worry if you're not strong enough yet.</li>
+  <li data-id="playthrough_1_15" class="f_none">Leave the Undead Burg and enter the Darkroot Garden. From there, go to the bonfire next to the door that can be opened with the crest of artorias. Kill the Moonlight Butterfly to get it's soul. This can also be done later in the game when you head there to <s>kill</s> pet sif.</li>
+  <li data-id="playthrough_1_16" class="f_weap">Farm the Stone Knights to get the Stone Greatsword and the Stone Greatshield.</li>
+  <li data-id="playthrough_1_17" class="f_none">Head back to the bridge with the Hellkite drake and use the Basement key to enter the lower Undead Burg. There you can free Griggs of Vinheim.</li>
+  <li data-id="playthrough_1_18" class="f_boss">Kill the Kapra Demon.</li>
+  <li data-id="playthrough_1_19" class="f_sorc">Purchase all of Griggs' Sorceries at Firelink Shrine. (Soul Arrow, Great Soul Arrow, Heavy Soul Arrow, Great Heavy Soul Arrow, Aural Decoy, Fall Control) Your intelligent must be at least 10 for him to teach you sorceries.</li>
+  <li data-id="playthrough_1_20" class="f_misc">Enter the Depths and get the Large Ember.</li>
+  <li data-id="playthrough_1_21" class="f_npc">Free Laurentius of the Great Swamp.</li>
+  <li data-id="playthrough_1_22" class="f_misc">Farm so many Basilisks until you have 7 eyes of death in your inventory.</li>
+  <li data-id="playthrough_1_23" class="f_boss f_weap">Kill the <a href="https://darksouls.wiki.fextralife.com/Gaping+Dragon">Gaping Dragon</a>. Cut off it's Tail to call the Dragon King Greataxe a weapon of your own.</li>
+  <li data-id="playthrough_1_24" class="f_none">Enter Blighttown (don't worry, you'll only have to do this once.)</li>
+  <li data-id="playthrough_1_25" class="f_none">Fetch the Pyromancy Power Within from under a gross Leech-thing stuck to a wall.</li>
+  <li data-id="playthrough_1_26" class="f_none">Kill Chaos Witch Queelag to receive her Soul and ring the second Bell of Awakening.</li>
+  <li data-id="playthrough_1_27" class="f_miss">Meet the Fair Lady and Eingyi (the egg carrier accompanying her). Make sure to say <b>YES</b> when he asks you wether you're a new servant.</li>
+  <li data-id="playthrough_1_28" class="f_none">Get yourself infected with an egg by one of the egg carriers in izalith. Wait until the Egg replaces your head, then buy all of Eingyi's Pyromancies. (Toxic Mist, Poison Mist) He'll sell the item you need to remove the egg.</li>
+  <li data-id="playthrough_1_29" class="f_none">Offer 30 humanity to the Fair Lady after joining the chaos servants covenant to receive the Pyromancies Great Chaos Fireball and Chaos Storm.</li>
+  <li data-id="playthrough_1_30" class="f_none">On your journey back up, grab the Remedy Sorcery, which is near the exit of Blighttown.</li>
+  <li data-id="playthrough_1_31" class="f_none">Return to the surface and enter the Valley of Drakes. Fetch Astora's Straight Sword and the Dragon Crest Shield from under the Undead Dragon's nose.</li>
+  <li data-id="playthrough_1_32" class="f_none">Open the shortcut that connects Firelink Shrine and the ruins of New Londo.</li>
+  <li data-id="playthrough_1_33" class="f_none">While your in Firelink Shrine, Buy all of Laurentius' Pyromancies (Fireball, Fire Orb, Combustion, Iron Flesh, Flash Sweat) and upgrade you Pyromancy flame to +10.</li>
+  <li data-id="playthrough_1_34" class="f_none">Head to the Darkroot Basin and Kill the Hydra that lives there.</li>
+  <li data-id="playthrough_1_35" class="f_none">Reload the area and find the golden Crystal Golem. Kill him to free Dusk of Oolacile.</li>
+  <li data-id="playthrough_1_36" class="f_none">Find Dusks summoning sign where you killed the Hydra to summon her and buy all of her Sorceries. (Hidden Weapon, Hidden Body, Cast Light,Repair, Chameleon)</li>
+  <li data-id="playthrough_1_37" class="f_none">Enter Sen's Funhouse. Make sure to talk to Siegmeyer while you're there.</li>
+  <li data-id="playthrough_1_38" class="f_none">Free Big Hat Logan and meet him at Firelink Shrine to purchase all of his spells. (Homing Soulmass, Soul Spear, Magic Weapon, Great Magic Weapon, Magic Shield) Your intelligent has to be at least 15 for that.</li>
+  <li data-id="playthrough_1_39" class="f_none">Kill the Iron Golem to receive his Soul and make your way to Anor Londo.</li>
+  <li data-id="playthrough_1_40" class="f_none">Perform a balance act in Anor Londo. Cut the chain of the chandelier while you're up there.</li>
+  <li data-id="playthrough_1_41" class="f_none">Enter the painted world of Ariamis after Grabbing the Black Iron Set and the Black Iron Greatshield.</li>
+  <li data-id="playthrough_1_42" class="f_none">Make your way through the painted world. You should farm at least eight Souvenirs of Reprisal by killing the Crow Demons.</li>
+  <li data-id="playthrough_1_43" class="f_none">Get the Bloodshield from the bridge with the undead dragon.</li>
+  <li data-id="playthrough_1_44" class="f_none">Pick up Velka's Rapier and Vow of Silence.</li>
+  <li data-id="playthrough_1_45" class="f_none">Fetch the Pyromancy Acid Surge in the area where you're invaded by King Jeremia.</li>
+  <li data-id="playthrough_1_46" class="f_none">Kill an unmoving toxic zombie behind an illusiory wall down a well in the area with the Phalanx. He drops the Pyromancy Fire Surge.</li>
+  <li data-id="playthrough_1_47" class="f_none">Kill Crossbreed Priscilla to receive her soul, but also cut off her tail for Priscilla's Dagger.</li>
+  <li data-id="playthrough_1_48" class="f_none">After returning to Anor Londo, make your way past the infamous Anor Londo Archers. Farm the Silver Knights that guard the halls of Anor Londo to earn the Silver Knight Straight Sword, Silver Knight Spear and the Silver Knight Shield. Help Siegmeyer with his little problem in the process. In addition, you can fetch three Sunlight Medals from a chest.</li>
+  <li data-id="playthrough_1_49" class="f_none">Discover Havel's secret chamber to grab the Dragon Tooth and Havel's Greatshield from the chests down there.</li>
+  <li data-id="playthrough_1_50" class="f_none">Kill Ornstein and Smough. But watch out: You'll only receive the Souls of whoever you kill second. Make 100% sure to kill the other one next time around. To gain more control over who dies first, try not summoning anyone for the fight.</li>
+  <li data-id="playthrough_1_51" class="f_none">Purchase the Giant's Halberd from the Giant Blacksmith.</li>
+  <li data-id="playthrough_1_52" class="f_none">Farm the Bat Wing Demons long enough to earn yourself the Demon's Spear.</li>
+  <li data-id="playthrough_1_53" class="f_none">Drop out of the Window above the main entrance of Anor Londo to get to the Dragonslayer Greatbow.</li>
+  <li data-id="playthrough_1_54" class="f_none">Use the Black Eye Orb to invade the world of Knight Lautrec and kill him to get a new Souvenir of Reprisal and the Firekeeper's soul back.</li>
+  <li data-id="playthrough_1_55" class="f_none">Receive the Lordvessel and enter the Princess' Guard, but shoot Gwynevere after you've done that. Do NOT talk to Kingseeker Frampt anymore after receiving the Lordvessel.</li>
+  <li data-id="playthrough_1_56" class="f_none">Challenge Gwyndolin to get his Soul and the miracle Sunlight Blade that lies within a chest at the end of the Darkmoon Tomb.</li>
+  <li data-id="playthrough_1_57" class="f_none">Purchase the Crest of Artorias from Andre and open the gate to the Forest Hunter area. Run past all of the Npc fighters and enter the Forest Hunter Covenant by talking to the Alvina the white cat.</li>
+  <li data-id="playthrough_1_58" class="f_none">Pet Great Greywolf Sif to get her Soul. Sif's souls is the only soul you'll need three times, she is the only reason you'll be required to play halfway through new game +2.</li>
+  <li data-id="playthrough_1_59" class="f_none">Quickly run through New Londo. Don't forget to purchase the Sorcery Resist Curse from Ingward, the guardian of the seal of New Londo.</li>
+  <li data-id="playthrough_1_60" class="f_none">Put on the Covenant of Artorias and Kill the Four Kings. Grab the Very Large Ember along the Way.</li>
+  <li data-id="playthrough_1_61" class="f_none">Since you haven't talked to Frampt yet, Kaathe will appear. Let him transport you to the Lordvessel Chamber and enter the Darkwraith Covenant afterwards to receive the Dark Hand.</li>
+  <li data-id="playthrough_1_62" class="f_none">Meet Siegmeyer at Firelink Shrine after you've helped him in Anor Londo. Upon meeting him, he will ask wether you were the one who helped him in Sen's Fortress as well. Say YES to receive the Emit Force Miracle.</li>
+  <li data-id="playthrough_1_63" class="f_none">Teleport to the Daughter of Chaos Bonfire and head to the Blighttown swamp. If your Pyromancy flame is +10 already, you'll find a new Npc, Quelana of Izalith. She'll teach you various pyromanciey, all of which you have to buy: Great Fireball, Firestorm, Fire Whip, Great Combustion, and Undead Rapport. She can also enhance your Pyromancy flame up to +15 with her help.</li>
+  <li data-id="playthrough_1_64" class="f_none">Meet Siegmeyer In front of the Giant Tree in the Swamp and give him a purple moss clump to progress his questline.</li>
+  <li data-id="playthrough_1_65" class="f_none">Walk through an illusiory wall in the giant tree surrounded by Leeches to find the entrance to the Great Hollow. Descend within the Great Hollow and arrive at Ash Lake.</li>
+  <li data-id="playthrough_1_66" class="f_none">Proceed to explore Ash Lake and find Great Magic Barrier within another tree.</li>
+  <li data-id="playthrough_1_67" class="f_none">Find the last Everlasting Dragon at the end of Ash Lake, enter the path of the dragon covenant and cut off his tail to get the Dragon Greatsword. Don't worry, he won't mind.</li>
+  <li data-id="playthrough_1_68" class="f_none">Teleport back to Izalith and shove the Ceaseless discharge gently to his death.</li>
+  <li data-id="playthrough_1_69" class="f_none">Run past the Capra Demons and fight the Demon Firesage. (it should be mentioned at this point that the Demon Firesage as well as the Centipide Demon technically aren't mandatory. They can be skipped by Becoming a +2 member of the servants of Chaos and activating the shortcut associated with that covenant.)</li>
+  <li data-id="playthrough_1_70" class="f_none">Kill the Centipide Demon and make your way through Lost Izalith. Quelana will now ask you to kill her mother ( the Bed of Chaos).</li>
+  <li data-id="playthrough_1_71" class="f_none">Either kill Solaire or save him by using the shortcut I previously mentioned before the centipide demon. Pick up the Sunlight maggot.</li>
+  <li data-id="playthrough_1_72" class="f_none">Help Siegmeyer defeat the Chaos Eaters in the a pit, but make sure that his hp don't sink under 50%. I recommend killing most of the Chaos Eaters with a bow before talking to him.</li>
+  <li data-id="playthrough_1_73" class="f_none">Pick up the Pyromancy Chaaos Fire Whip near the entrance of the Bed of Chaos bossroom.</li>
+  <li data-id="playthrough_1_74" class="f_boss">Defeat the Bed of Chaos.</li>
+  <li data-id="playthrough_1_75" class="f_none">Go talk to Quelana. She'll give you the Fire Tempest Pyromancy.</li>
+  <li data-id="playthrough_1_76" class="f_none">Teleport to Anor Londo and make your way to the Duke's archives.</li>
+  <li data-id="playthrough_1_77" class="f_none">Die in an unwinable battle to Seath. Put on a ring of sacrifice to avoid losing your souls.</li>
+  <li data-id="playthrough_1_78" class="f_none">Escape your cell and kill all of the Pisaca to earn Bountiful Sunlightand Soothing Sunlight.</li>
+  <li data-id="playthrough_1_79" class="f_none">Talk to Big Hat Logan in the Cell he's now Stuck in.</li>
+  <li data-id="playthrough_1_80" class="f_none">Escape the Dungeon and farm the respawning Channelers in the rooms with the shifting staircases until you pick up the Channeler's Trident.</li>
+  <li data-id="playthrough_1_81" class="f_none">Fetch Strong Magic Shield from a chest in the very same room.</li>
+  <li data-id="playthrough_1_82" class="f_none">Get the Archive Tower Giant Cell Key and free Logan. He can now be found in the room next to the one you found the key in. He'll sell some new Sorceries including Homing Crystal Soulmass, Crystal Soul Spear and Crystal Magic Weapon.</li>
+  <li data-id="playthrough_1_83" class="f_none">Kill the golden Crystal Golem in the Crystal Forest to free Sieglinde, Siegmeyer's Daughter. Answer YES to anything she'll ever ask you.</li>
+  <li data-id="playthrough_1_84" class="f_none">Kill Seath the Scaleless in the Crytal Cave, but cut off his Tail at all costs to receive the Moonlight Greatsword. Wearing the Slumbering Dragoncrest Ring will make this task easier.</li>
+  <li data-id="playthrough_1_85" class="f_none">Big hat Logan can now be found in the room where you first met Seath. He'll only spawn once you opened the chest that is now in there though. Kill him to receive the Sorcery White Dragon Breath.</li>
+  <li data-id="playthrough_1_86" class="f_none">Make your way through the graveyard next to Firelink Shrine and enter the Catacombs.</li>
+  <li data-id="playthrough_1_87" class="f_none">Grab the Darkmoon Seance Ring. It's inside a stone coffin. Near the the ring is in there is a room with a ladder on the wall. Climb the ladder to enter a room containing the miracle Tranquil Walk of Peace.</li>
+  <li data-id="playthrough_1_88" class="f_none">Grab 3 more eyes of death that lay on the ground behind a titanite demon.</li>
+  <li data-id="playthrough_1_89" class="f_none">Lay down inside an open stone coffin neaar the same titanite demon and wait for a bit. Walk to Nito's coffin, enter his covenant, the gravelord servants, and give him the 10 eyes of death. This will give you the Gravelord Sword, the Gravelord Sword Dance and the Gravelord Greatsword Dance.</li>
+  <li data-id="playthrough_1_90" class="f_none">It's time for the most powerful boss in the game! That's right, it's time for Pinwheel! Overcome that challenge and move on into the Tomb of the Giants. Wearing the Sunlight Maggot on your head will help you very much in this area.</li>
+  <li data-id="playthrough_1_91" class="f_none">Hidden somewhere in the Tomb is the Effigy Shield. Don't miss it.</li>
+  <li data-id="playthrough_1_92" class="f_none">Once you've arrived at the Tomb of the Giants bonfire, you can get yourself kicked down a pit by Patches. Kill Nico and Vince and then talk to Reah of Thorolund. She'll give you the miracle Replenishment.</li>
+  <li data-id="playthrough_1_93" class="f_none">Return to Firelink Shrine and kill Petrus. He is not relevant to Reah's questline anymore. She can now be found in the church of the Undead Burg, praying at the altar the corps with the Firekeeper soul lies on. She sells the following miracles: Force, Wrath of the Gods, Heal, Great Heal Exerpt, Great Heal, Homeward, Magic Barrier and Seek Guidance. Buy all of them.</li>
+  <li data-id="playthrough_1_94" class="f_none">Return to the Tomb of the Giants, forgive Patches and return to Firelink Shrine.</li>
+  <li data-id="playthrough_1_95" class="f_none">By now Sieglinde should be at Firelink Shrine. Tell her that you found her father.</li>
+  <li data-id="playthrough_1_96" class="f_none">Buy all of the spells Griggs has left to sell, as well as all of his rings.</li>
+  <li data-id="playthrough_1_97" class="f_none">Patches should also be an available merchant in Firelink Shrine by now. Buy the Crescent Axe from him. Edit: Killing Nito is required in order to turn Patches into an available merchant.</li>
+  <li data-id="playthrough_1_98" class="f_none">Griggs can now be met in his hollow form in Sen's Fortress . Kill him to receive the sorcery Hush.</li>
+  <li data-id="playthrough_1_99" class="f_none">If Sieglinde has returned by now, she'll tell you that she finally got to tell her father her mother's last words.</li>
+  <li data-id="playthrough_1_100" class="f_none">Go back to Ash Lake to meet Sieglinde standing above Siegmeyer's dead body. She'll give you a Titanite Slab.</li>
+  <li data-id="playthrough_1_101" class="f_none">Proceed to explore the Tomb of the Giants and let yourself get invaded by Paladin Leeroy. Kill him to receive the Grant and the Sanctus.</li>
+  <li data-id="playthrough_1_102" class="f_boss">Defeat Gravelord Nito after entering his Tomb.</li>
+  <li data-id="playthrough_1_103" class="f_none">Make your way to the Kiln of the first flame. Farm the Black Knights until you're holding the Black Knight Sword, the Black Knight Greatsword, the Black Knight Halberd, the Black Knight Shield and the Black Knight Greataxe. While you're at it, farm all of the colored Titanite Chunks.</li>
+  <li data-id="playthrough_1_104" class="f_boss">Finish off Gwyn and either Link the Fire or become the Dark Lord. Regardless of what you do, make sure to pick the other choice in new game+.</li>
+</ul>
+&#x200B;
+
+<h3 id="new_game_p"><a href="#new_game_p_col" data-toggle="collapse" class="btn btn-primary btn-collapse btn-sm"></a><a href="http://darksouls3.wiki.fextralife.com/Cemetery+of+Ash">New Game+</a> <span id="playthrough_totals_2"></span></h3>
+I will only list the stuff you'll have to do differently, or additional stuff you'll have to do.
+<ul id="new_game_p_col" class="collapse in">
+  <li data-id="playthrough_2_1" class="f_none">You won't have to kill the <a href="https://darksouls.wiki.fextralife.com/Gaping+Dragon">Gaping Dragon</a> and Crossbreed Priscilla.</li>
+  <li data-id="playthrough_2_2" class="f_none">You will not have to follow Siegmeyer's Questline.</li>
+  <li data-id="playthrough_2_3" class="f_none">You will not have to do any of the merchant's questlines since you won't need any of their spells.</li>
+  <li data-id="playthrough_2_4" class="f_none">This time, grab all of the embers.</li>
+  <li data-id="playthrough_2_5" class="f_none">The Large Ember is in the depths. (Give it to Andre)</li>
+  <li data-id="playthrough_2_6" class="f_none">The Very large Ember is in the ruins of New Londo. (Give it to Andre)</li>
+  <li data-id="playthrough_2_7" class="f_none">The Large Flame ember is in Lost Izalith. It's near the entrnace to the bossroom of the demon firesage. Just go left, were two Taurus Demons are standing around. The chest that holds the ember is protected by four large centipides. (Give it to the Skeleton Blacksmith Vamos)</li>
+  <li data-id="playthrough_2_8" class="f_none">After getting the Orange Charred Ring from beating the Centipide Demon, head to the start of Izalith, where the Taurus Demon Army is. Defeat them and look through the lava behind them to find the Large Chaos Ember. (Give it to the Skeleton Blacksmith Vamos)</li>
+  <li data-id="playthrough_2_9" class="f_none">The divine ember can be found at the top of the tower behind the boss arena of the Moonlight Butterfly. (Give it to Andre)</li>
+  <li data-id="playthrough_2_10" class="f_none">The Dark Ember is located in the Painted world. It's in the area that is unlocked by using the annex key. (Give it to Andre)</li>
+  <li data-id="playthrough_2_11" class="f_none">The Large Divine Ember is inside a giant coffin near the Tomb of the Giants bonfire. It's protected by a horde of giant skeletons. (Give it to Andre)</li>
+  <li data-id="playthrough_2_12" class="f_none">The Enchanted Ember is near Sif's boss arena. It's inside a chest in a small puddle of water, protected by two mushroom people. (Give it to Blacksmith Rickert)</li>
+  <li data-id="playthrough_2_13" class="f_none">The Large Magic Ember is inside Seath's original boss arena (the one where he kills you) after you've defeated him. (Give it to Blacksmith Rickert)</li>
+  <li data-id="playthrough_2_14" class="f_none">Last but not least, the Crystal Ember is inside a chest in Duke's archives. It's in the same room the Channeler's outfit can be found and is hidden behind a bookshelf. (Give it to the Giant Blacksmith)</li>
+  <li data-id="playthrough_2_15" class="f_none">Make all of your infused weapons and upgrade them to their maximum strength. If you have trouble remembering how infusions work, click this link. (Andre: Raw (Large Ember) Divine (Divine Ember & Large Divine Ember)) Occult (Dark Ember) (Rickert: Enchanted (Enchanted Ember) & Magic (Large Magic Ember)) (Vamos: Fire (Large Flame Ember) Chaos (Large Chaos Ember)) (Giant Blacksmith: Lightning (Naturally) Crystal (Crystal Ember))</li>
+  <li data-id="playthrough_2_16" class="f_none">Defeat Ornstein and Smough, but kill the other one first this time, depending on who you killed first the first time around.</li>
+  <li data-id="playthrough_2_17" class="f_none">Trigger a different ending then last time, depending on wether you linked the fire or not in new game.</li>
+</ul>
+
+<h3 id="new_game_pp"><a href="#new_game_pp_col" data-toggle="collapse" class="btn btn-primary btn-collapse btn-sm"></a><a href="http://darksouls3.wiki.fextralife.com/Cemetery+of+Ash">New Game+2</a> <span id="playthrough_totals_3"></span></h3>
+Here I will also only list the things you'll have to do differently.
+<ul id="new_game_pp_col" class="collapse in">
+  <li data-id="playthrough_3_1" class="f_none">You don't need any of the embers this time, except for the Large Ember.</li>
+  <li data-id="playthrough_3_2" class="f_none">Kill Sif (for the third time) before going to Anor Londo.</li>
+  <li data-id="playthrough_3_3" class="f_none">If you have enough Sunlight medals by now, enter the Warriors of Sunlight covenant and offer ten Sunlight medals to receive Great Lightning Spear. Now you have the ability to offer the Soul of Gwy, Lord of Cinder to get the miracle Sunlight Spear.</li>
+  <li data-id="playthrough_3_4" class="f_none">Do not Kill Gwynevere. Instead, put on the Darkmoon Seance Ring to get to the Darkmoon Tomb without robbing Anor Londo of it's sunlight. DO NOT enter Gwyndolin's boss arena, but instead kneel on the carpet in front of the boss arena and take the covenant of Blade of the Darkmoon. Offer ten Souvenirs of Reprisal to receive the last miracle needed: Darkmoon Blade.</li>
+  <li data-id="playthrough_3_5" class="f_none">It's time. You now have everything you need to create all of the boss wepons you'll need. Note that all of the weapons required for ascension have to be upgraded up to +10, not including the Catalysts since they cannot be upgraded. Here are all the Boss weapons you need and what you need for their ascension:</li>
+</ul>
+
+<h3 id="queelag"><a href="#queelag_col" data-toggle="collapse" class="btn btn-primary btn-collapse btn-sm"></a><a href="http://darksouls3.wiki.fextralife.com/Cemetery+of+Ash">Soul of Chaos witch Queelag</a> <span id="playthrough_totals_4"></span></h3>
+<ul id="queelag_col" class="collapse in">
+  <li data-id="playthrough_4_1" class="f_weap">Chaos Blade (Ascend a +10 Katana. The Uchigatana is recommended since it can easily be obtained by killing the undead merchant (male)).</li>
+  <li data-id="playthrough_4_2" class="f_weap">Queelag's Furysword (Ascend a +10 Curved Sword, for example a scimitar or a Painting Guardian's Sword)</li>
+</ul>
+
+<h3 id="moonlight_butterfly"><a href="#moonlight_butterfly_col" data-toggle="collapse" class="btn btn-primary btn-collapse btn-sm"></a><a href="http://darksouls3.wiki.fextralife.com/Cemetery+of+Ash">Soul of the Moonlight Butterfly</a> <span id="playthrough_totals_5"></span></h3>
+<ul id="moonlight_butterfly_col" class="collapse in">
+  <li data-id="playthrough_5_1" class="f_weap">Moonlight Butterfly Horn (Ascend a +10 Spear. The regular Spear is recommended since it's frequently dropped by undead Soldiers wielding it in the Undead Burg. Pikes can also be purchased from Andre.)</li>
+  <li data-id="playthrough_5_2" class="f_weap">Crystal Ring Shield (Ascend a +10 standart shield or buckler. The Large Leather Shield can be bought from Andre for a relatively low price.)</li>
+</ul>
+
+<h3 id="iron_Golem"><a href="#iron_Golem_col" data-toggle="collapse" class="btn btn-primary btn-collapse btn-sm"></a><a href="http://darksouls3.wiki.fextralife.com/Cemetery+of+Ash">Core of the Iron Golem</a> <span id="playthrough_totals_6"></span></h3>
+<ul id="iron_Golem_col" class="collapse in">
+  <li data-id="playthrough_6_1" class="f_weap">Golem Axe (Ascend a +10 axe. The Battle Axe can be purchased from Andre.)</li>
+  <li data-id="playthrough_6_2" class="f_weap">Dragon Bone Fist (Ascend a +10 claw or fist weapon. Andre sells Ceastus' for a low price.)</li>
+</ul>
+
+<h3 id="gwyndolin"><a href="#gwyndolin_col" data-toggle="collapse" class="btn btn-primary btn-collapse btn-sm"></a><a href="http://darksouls3.wiki.fextralife.com/Cemetery+of+Ash">Soul of Gwyndolin</a> <span id="playthrough_totals_7"></span></h3>
+<ul id="gwyndolin_col" class="collapse in">
+  <li data-id="playthrough_7_1" class="f_weap">Darkmoon Bow (Ascend a +10 bow. The Longbow can be found on tthe path between the Darkroot Garden and the Darkroot Basin, alongside the hunter armor.)</li>
+  <li data-id="playthrough_7_2" class="f_weap">Tin Darkmoon Catalyst (Ascend a Catalyst. The Sorcere's Catalyst can be bought from Griggs or Rickert.)</li>
+</ul>
+
+<h3 id="ornstein"><a href="#ornstein_col" data-toggle="collapse" class="btn btn-primary btn-collapse btn-sm"></a><a href="http://darksouls3.wiki.fextralife.com/Cemetery+of+Ash">Soul of Ornstein</a> <span id="playthrough_totals_8"></span></h3>
+<ul id="ornstein_col" class="collapse in">
+  <li data-id="playthrough_8_1" class="f_weap">Dragonslayer Spear (Ascend a +10 Spear. The regular Spear is recommended since it's frequently dropped by undead Soldiers wielding it in the Undead Burg. Pikes can also be purchased from Andre.)</li>
+</ul>
+
+<h3 id="smough"><a href="#smough_col" data-toggle="collapse" class="btn btn-primary btn-collapse btn-sm"></a><a href="http://darksouls3.wiki.fextralife.com/Cemetery+of+Ash">Soul of Smough</a> <span id="playthrough_totals_9"></span></h3>
+<ul id="smough_col" class="collapse in">
+  <li data-id="playthrough_9_1" class="f_weap">Smough's Hammer (Ascend a +10 Hammer or Great Hammer. The Large Club can be found in Blighttown, guarded by two Infested Barbarians with boulders that they hold above their heads.)</li>
+</ul>
+
+<h3 id="priscilla"><a href="#priscilla_col" data-toggle="collapse" class="btn btn-primary btn-collapse btn-sm"></a><a href="http://darksouls3.wiki.fextralife.com/Cemetery+of+Ash">Soul of Priscilla</a> <span id="playthrough_totals_10"></span></h3>
+<ul id="priscilla_col" class="collapse in">
+  <li data-id="playthrough_10_1" class="f_weap">Lifehunt Scythe (Ascend a +10 Scythe Halber, Scythe or Whip. The Great Scythe is located in the upper levels of the Catacombs.)</li>
+</ul>
+
+<h3 id="gwyn"><a href="#gwyn_col" data-toggle="collapse" class="btn btn-primary btn-collapse btn-sm"></a><a href="http://darksouls3.wiki.fextralife.com/Cemetery+of+Ash">Soul of Gwyn, Lord of Cinder</a> <span id="playthrough_totals_11"></span></h3>
+<ul id="gwyn_col" class="collapse in">
+  <li data-id="playthrough_11_1" class="f_weap">Great Lord Greatsword (Ascend a +10 Greatsword. The Greatsword can be purchased from the Crestfallen Merchant in Sen's Fortress.)</li>
+</ul>
+
+<h3 id="great_sif"><a href="#great_sif_col" data-toggle="collapse" class="btn btn-primary btn-collapse btn-sm"></a><a href="http://darksouls3.wiki.fextralife.com/Cemetery+of+Ash">Soul of Great Grey Wolf Sif</a> <span id="playthrough_totals_12"></span></h3>
+<ul id="great_sif_col" class="collapse in">
+  <li data-id="playthrough_12_1" class="f_weap">Greatshield of Artorias (Ascend a +10 Standart Shield or Buckler. The Large Leather Shield can be bought from Andre for a relatively low price.)</li>
+  <li data-id="playthrough_12_2" class="f_weap">Greatsword of Artorias (true) (Ascend a +10 Broken Sword, dropped by the Hollows in the Undead Burg. The name doesn't indicate that it is the true greatsword and not the cursed one, but you can tell regardless. The true Greatsword inflicts magic damage in addition to physical damage and has higher faith and intelligence requirements to wield. MAKE ABSOLUTELY SURE that you don't ascend the same Greatsword two times. If you do this, you'll have to enter New Game +3 to get the remaining greatsword.)</li>
+  <li data-id="playthrough_12_3" class="f_weap">Greatsword of Artorias (cursed) (Ascend a +10 Dagger, Sword or Greatsword. Make absolutely sure you ascend the right one.The cursed sword does not inflict magic damage, has lower faith and intelligence requirements than the true greatsword and can attack the ghosts in New Londo Ruins without requiring you to be cursed or use a trancient curse.)</li>
+</ul>
+&#x200B;
+
+</div>

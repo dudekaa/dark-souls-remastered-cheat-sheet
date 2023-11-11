@@ -10,8 +10,8 @@ describe('AchievementsPageComponent', () => {
     await TestBed.configureTestingModule({
       imports: [AchievementsPageComponent]
     })
-    .compileComponents();
-    
+      .compileComponents();
+
     fixture = TestBed.createComponent(AchievementsPageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

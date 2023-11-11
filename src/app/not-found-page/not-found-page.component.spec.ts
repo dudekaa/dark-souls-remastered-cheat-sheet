@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PlaythroughPageComponent } from './playthrough-page.component';
+import { NotFoundPageComponent } from './not-found-page.component';
 
-describe('PlaythroughPageComponent', () => {
-  let component: PlaythroughPageComponent;
-  let fixture: ComponentFixture<PlaythroughPageComponent>;
+describe('NotFoundPageComponent', () => {
+  let component: NotFoundPageComponent;
+  let fixture: ComponentFixture<NotFoundPageComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [PlaythroughPageComponent]
+      imports: [NotFoundPageComponent]
     })
       .compileComponents();
 
-    fixture = TestBed.createComponent(PlaythroughPageComponent);
+    fixture = TestBed.createComponent(NotFoundPageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
