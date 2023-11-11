@@ -332,5 +332,13 @@
 <!-- * * * * * * * * * * End of Placeholder  * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 
+<nav>
+  <!-- your navs bound to current route fragments -->
+  <ul ngbNav class="navbar nav-tabs">
+    <li [ngbNavItem]="link.fragment" *ngFor="let link of links">
+      <a ngbNavLink routerLink="{{link.path}}" routerLinkActive="active">{{ link.title }}</a>
+    </li>
+  </ul>
+</nav>
 
 <router-outlet></router-outlet>
