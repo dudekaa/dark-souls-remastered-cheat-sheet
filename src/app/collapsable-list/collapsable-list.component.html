@@ -1,0 +1,9 @@
+<h3 id="{{ data.title | encodeFragment }}">
+  <a (click)="options.isCollapsed = !options.isCollapsed" [attr.aria-expanded]="!options.isCollapsed" data-bs-toggle="collapse" class="btn btn-primary btn-collapse btn-sm"></a>
+  <a *ngIf="data.url !== undefined && data.url !== ''" href="{{ data.url }}">{{ data.title }}</a>
+  <span *ngIf="data.url === undefined || data.url === ''">{{ data.title }}</span>
+  <span id="playthrough_totals_1"></span></h3>
+<p *ngIf="data.description && !options.isCollapsed">{{ data.description }}</p>
+<ul id="new_game_col" [(ngbCollapse)]="options.isCollapsed" class="collapse in" *ngFor="let item of data.items; index as i">
+  <li data-id="playthrough_1_{{ i+1 }}" [ngClass]="item.metadata" [innerHtml]="item.description"></li>
+</ul>
