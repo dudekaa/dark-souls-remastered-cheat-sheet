@@ -1,10 +1,10 @@
-# Dark Souls 3 Cheat Sheet
+# Dark Souls Remastered Cheat Sheet
 
-To view the cheat sheet [click here](http://zkjellberg.github.io/dark-souls-3-cheat-sheet/).
+To view the cheat sheet [click here](http://dudekaa.github.io/dark-souls-remastered-cheat-sheet/).
 
-This checklist was created by adopting the source code from the [Dark Souls 2 Cheat Sheet](https://github.com/smcnabb/dark-souls-2-cheat-sheet/tree/gh-pages) created by [Stephen McNabb](https://github.com/smcnabb).
+This checklist was created by adopting the source code from the [Dark Souls 3 Cheat Sheet](hhttps://github.com/ZKjellberg/dark-souls-3-cheat-sheet/tree/gh-pages) created by [Stephen McNabb](https://github.com/smcnabb).
 
-The walkthrough is thanks to [DeathGodGarra's NPC Side Quests Guide V2](https://www.gamefaqs.com/boards/168566-dark-souls-iii/73599466).
+The walkthrough is thanks to [Guide to all of the achievements](https://www.reddit.com/r/darksouls/comments/hhc4dv/guide_to_all_of_the_achievements/).
 
 ## Contribution Guide
 
