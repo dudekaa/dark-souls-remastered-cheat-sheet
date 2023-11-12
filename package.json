@@ -9,6 +9,10 @@
     "test": "ng test",
     "lint": "ng lint"
   },
+  "repository": {
+    "type": "git+ssh",
+    "url": "git@github.com:dudekaa/dark-souls-remastered-cheat-sheet.git"
+  },
   "private": true,
   "dependencies": {
     "@angular/animations": "^17.0.0",
