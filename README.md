@@ -1,8 +1,8 @@
 # Dark Souls Remastered Cheat Sheet
 
-To view the cheat sheet [click here](http://dudekaa.github.io/dark-souls-remastered-cheat-sheet/).
+To view the cheat sheet, [click here](http://dudekaa.github.io/dark-souls-remastered-cheat-sheet/).
 
-This checklist was created by adopting the source code from the [Dark Souls 3 Cheat Sheet](hhttps://github.com/ZKjellberg/dark-souls-3-cheat-sheet/tree/gh-pages) created by [Stephen McNabb](https://github.com/smcnabb).
+This checklist was created by adopting the source code from the [Dark Souls 3 Cheat Sheet](hhttps://github.com/ZKjellberg/dark-souls-3-cheat-sheet/tree/gh-pages) created by [Zachary Kjellberg](https://github.com/ZKjellberg).
 
 The walkthrough is thanks to [Guide to all of the achievements](https://www.reddit.com/r/darksouls/comments/hhc4dv/guide_to_all_of_the_achievements/).
 
