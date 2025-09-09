@@ -42,6 +42,89 @@ var profilesKey = 'darksouls3_profiles';
         // Open external links in new tab
         $("a[href^='http']").attr('target','_blank');
 
+        // Auto-link bosses, NPCs, places, weapons, items, spells, and monsters to Fextralife wiki
+        (function autoLinkFextralife() {
+            var terms = [
+                // Bosses
+                'Asylum Demon','Taurus Demon','Bell Gargoyles','Gaping Dragon','Chaos Witch Quelaag','Moonlight Butterfly','Iron Golem','Crossbreed Priscilla','Dragon Slayer Ornstein','Executioner Smough','Dark Sun Gwyndolin','Great Grey Wolf Sif','Four Kings','Ceaseless Discharge','Demon Firesage','Centipede Demon','Bed of Chaos','Seath the Scaleless','Gravelord Nito','Gwyn, Lord of Cinder','Stray Demon','Capra Demon',
+                // NPCs
+                'Oscar of Astora','Petrus of Thorolund','Undead Merchant (male)','Andre of Astora','Knight Lautrec of Carim','Oswald of Carim','Griggs of Vinheim','Laurentius of the Great Swamp','Dusk of Oolacile','Big Hat Logan','Giant Blacksmith','Darkstalker Kaathe','Kingseeker Frampt','Gwynevere','Alvina','Ingward','Quelana of Izalith','Siegmeyer of Catarina','Anastacia of Astora','Eingyi','The Fair Lady','Havel the Rock','Blacksmith Vamos','Shiva of the East','Patches','Domhnall of Zena',
+                // Places
+                'Northern Undead Asylum','Undead Asylum','Lordran','Undead Burg','Undead Parish','Darkroot Garden','Darkroot Basin','Valley of Drakes','New Londo Ruins','Blighttown','Depths','Sen\'s Fortress','Anor Londo','Painted World of Ariamis','Sunlight Altar','Great Hollow','Ash Lake','Lost Izalith','The Catacombs','Tomb of the Giants','Duke\'s Archives','Crystal Cave','Kiln of the First Flame',
+                // Weapons & Shields (common DS1 names)
+                'Drake Sword','Claymore','Longsword','Broadsword','Zweihander','Uchigatana','Iaito','Washing Pole','Balder Side Sword','Black Knight Sword','Black Knight Greatsword','Black Knight Halberd','Black Knight Greataxe','Gargoyle Tail Axe','Dragon King Greataxe','Dragon Tooth','Great Club','Large Club','Gravelord Sword','Greatsword of Artorias','Cursed Greatsword of Artorias','Abyss Greatsword','Moonlight Greatsword','Great Lord Greatsword','Chaos Blade','Quelaag\'s Furysword','Smough\'s Hammer','Dragonslayer Spear','Great Scythe','Halberd','Giant\'s Halberd','Demon\'s Spear','Pike','Partizan','Silver Knight Spear','Silver Knight Straight Sword','Silver Knight Shield','Grass Crest Shield','Crest Shield','Dragon Crest Shield','Havel\'s Greatshield','Black Iron Greatshield','Bloodshield','Eagle Shield','Spider Shield','Tower Kite Shield',
+                // Items & Key Items
+                'Estus Flask','Homeward Bone','Humanity','Green Titanite Shard','Titanite Shard','Large Titanite Shard','Titanite Chunk','Titanite Slab','Blue Titanite Chunk','Red Titanite Chunk','White Titanite Chunk','Blue Titanite Slab','Red Titanite Slab','White Titanite Slab','Large Ember','Very Large Ember','Divine Ember','Large Divine Ember','Occult Ember','Dark Ember','Enchanted Ember','Large Magic Ember','Large Fire Ember','Chaos Flame Ember','Rite of Kindling','Master Key','Basement Key','Mystery Key','Peculiar Doll','Lordvessel','Black Eye Orb','Covenant of Artorias',
+                // Pyromancies
+                'Power Within','Great Chaos Fireball','Chaos Storm','Fireball','Fire Orb','Combustion','Great Combustion','Iron Flesh','Flash Sweat','Acid Surge','Fire Surge','Great Fireball','Great Firestorm','Fire Whip',
+                // Sorceries
+                'Soul Arrow','Great Soul Arrow','Heavy Soul Arrow','Great Heavy Soul Arrow','Aural Decoy','Fall Control','Hidden Weapon','Hidden Body','Cast Light','Repair','Chameleon','Homing Soulmass','Homing Crystal Soulmass','Soul Spear','Crystal Soul Spear','Magic Weapon','Great Magic Weapon','Crystal Magic Weapon','Magic Shield','Strong Magic Shield','Remedy',
+                // Miracles
+                'Heal','Great Heal','Great Heal Excerpt','Homeward','Force','Wrath of the Gods','Karmic Justice','Sunlight Blade','Lightning Spear','Great Lightning Spear',
+                // Monsters/Enemies
+                'Black Knight','Silver Knight','Balder Knight','Basilisk','Titanite Demon','Undead Dragon','Crow Demon','Hydra','Hellkite Drake','Stone Knight','Stone Guardian'
+            ];
+
+            // Map display -> URL slug differences
+            var overrides = {
+                'Bell Gargoyles':'Bell+Gargoyles',
+                'Dragon Slayer Ornstein':'DragonSlayer+Ornstein',
+                'Executioner Smough':'Executioner+Smough',
+                'Great Grey Wolf Sif':'Great+Grey+Wolf+Sif',
+                'Gwyn, Lord of Cinder':'Gwyn+Lord+of+Cinder',
+                'Undead Merchant (male)':'Undead+Merchant+%28Male%29',
+                'The Catacombs':'The+Catacombs',
+                'Great Lord Greatsword':'Great+Lord+Greatsword',
+                'Cursed Greatsword of Artorias':'Cursed+Greatsword+of+Artorias',
+                'Wrath of the Gods':'Wrath+of+the+Gods'
+            };
+
+            var makeUrl = function(name){
+                if (overrides[name]) return 'https://darksouls.wiki.fextralife.com/' + overrides[name];
+                return 'https://darksouls.wiki.fextralife.com/' + name.replace(/\s+/g,'+').replace(/\'/g,'%27').replace(/,/g,'%2C');
+            };
+
+            // Build regex to find terms in text, longest first to avoid partial matches
+            var sorted = terms.slice().sort(function(a,b){return b.length - a.length;});
+            var pattern = new RegExp('(^|[^A-Za-z0-9])(' + sorted.map(function(t){
+                return t.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
+            }).join('|') + ')(?=$|[^A-Za-z0-9])','g');
+
+            function walk(node){
+                if (node.nodeType === 1) { // element
+                    var tag = node.tagName.toLowerCase();
+                    if (tag === 'a' || tag === 'script' || tag === 'style') return;
+                    for (var i=0;i<node.childNodes.length;i++){
+                        walk(node.childNodes[i]);
+                    }
+                } else if (node.nodeType === 3) { // text
+                    var text = node.nodeValue;
+                    if (!pattern.test(text)) return;
+                    pattern.lastIndex = 0;
+                    var frag = document.createDocumentFragment();
+                    var lastIndex = 0; var match;
+                    while ((match = pattern.exec(text)) !== null){
+                        var pre = text.slice(lastIndex, match.index + match[1].length);
+                        if (pre) frag.appendChild(document.createTextNode(pre));
+                        var found = match[2];
+                        var a = document.createElement('a');
+                        a.href = makeUrl(found);
+                        a.textContent = found;
+                        a.target = '_blank';
+                        frag.appendChild(a);
+                        lastIndex = match.index + match[0].length;
+                    }
+                    var rest = text.slice(lastIndex);
+                    if (rest) frag.appendChild(document.createTextNode(rest));
+                    node.parentNode.replaceChild(frag, node);
+                }
+            }
+
+            // Limit to content area to avoid nav labels etc if desired; applying to container
+            var root = document.querySelector('.container');
+            if (root) walk(root);
+        })();
+
         populateProfiles();
 
         $('.checkbox input[type="checkbox"]').click(function() {
@@ -238,7 +321,7 @@ var profilesKey = 'darksouls3_profiles';
 
             profiles[profilesKey][profiles.current].hide_completed = !hidden;
             $.jStorage.set(profilesKey, profiles);
-            
+
             // Try to find a reasonable new scroll position
             for (var a=0; a<oldOff.length-1; a++) if (oldOff[a]>oldPos) break;
             for (var b=0; b<oldOff.length-1; b++) if (oldOff[b]>oldPos+$(window).height()) break;
@@ -510,7 +593,7 @@ var profilesKey = 'darksouls3_profiles';
             return false;
         }
         if (classAttr === 'f_none') {
-            // If some filters are enabled, all entries marked f_none are automatically filtered as well 
+            // If some filters are enabled, all entries marked f_none are automatically filtered as well
             return Object.values(profiles[profilesKey][profiles.current].hidden_categories).some(function(f){return f});
         }
         var classList = classAttr.split(/\s+/);
