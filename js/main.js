@@ -45,38 +45,46 @@ var profilesKey = 'darksouls3_profiles';
         // Auto-link bosses, NPCs, places, weapons, items, spells, and monsters to Fextralife wiki
         (function autoLinkFextralife() {
             var terms = [
+                // Common DS1 names
+                'Firelink Shrine',
                 // Bosses
-                'Asylum Demon','Taurus Demon','Bell Gargoyles','Gaping Dragon','Chaos Witch Quelaag','Moonlight Butterfly','Iron Golem','Crossbreed Priscilla','Dragon Slayer Ornstein','Executioner Smough','Dark Sun Gwyndolin','Great Grey Wolf Sif','Four Kings','Ceaseless Discharge','Demon Firesage','Centipede Demon','Bed of Chaos','Seath the Scaleless','Gravelord Nito','Gwyn, Lord of Cinder','Stray Demon','Capra Demon',
+                'Asylum Demon','Taurus Demon','Bell Gargoyles','Gaping Dragon','Chaos Witch Quelaag','Moonlight Butterfly','Iron Golem','Crossbreed Priscilla','Dragon Slayer Ornstein','Executioner Smough','Dark Sun Gwyndolin','Sif','Great Grey Wolf Sif','Four Kings','Ceaseless Discharge','Demon Firesage','Centipede Demon','Bed of Chaos','Seath the Scaleless','Gravelord Nito','Gwyn, Lord of Cinder','Stray Demon','Capra Demon','Queelag','Chaos Witch Queelag',
                 // NPCs
-                'Oscar of Astora','Petrus of Thorolund','Undead Merchant (male)','Andre of Astora','Knight Lautrec of Carim','Oswald of Carim','Griggs of Vinheim','Laurentius of the Great Swamp','Dusk of Oolacile','Big Hat Logan','Giant Blacksmith','Darkstalker Kaathe','Kingseeker Frampt','Gwynevere','Alvina','Ingward','Quelana of Izalith','Siegmeyer of Catarina','Anastacia of Astora','Eingyi','The Fair Lady','Havel the Rock','Blacksmith Vamos','Shiva of the East','Patches','Domhnall of Zena',
+                'Oscar of Astora','Petrus of Thorolund','Undead Merchant (male)','Andre of Astora','Knight Lautrec of Carim','Oswald of Carim','Griggs of Vinheim','Laurentius of the Great Swamp','Dusk of Oolacile','Big Hat Logan','Giant Blacksmith','Darkstalker Kaathe','Kingseeker Frampt','Gwynevere','Alvina','Ingward','Quelana of Izalith','Siegmeyer','Siegmeyer of Catarina','Anastacia of Astora','Eingyi','The Fair Lady','Havel the Rock','Blacksmith Vamos','Shiva of the East','Patches','Domhnall of Zena',
                 // Places
-                'Northern Undead Asylum','Undead Asylum','Lordran','Undead Burg','Undead Parish','Darkroot Garden','Darkroot Basin','Valley of Drakes','New Londo Ruins','Blighttown','Depths','Sen\'s Fortress','Anor Londo','Painted World of Ariamis','Sunlight Altar','Great Hollow','Ash Lake','Lost Izalith','The Catacombs','Tomb of the Giants','Duke\'s Archives','Crystal Cave','Kiln of the First Flame',
+                'Northern Undead Asylum','Undead Asylum','Lordran','Undead Burg','Undead Parish','Darkroot Garden','Darkroot Basin','Valley of Drakes','New Londo Ruins','Blighttown','Depths','Sen\'s Fortress','Anor Londo','Painted World of Ariamis','Sunlight Altar','Great Hollow','Ash Lake','Lost Izalith','Catacombs','Tomb of the Giants','Duke\'s Archives','Crystal Cave','Kiln of the First Flame',
                 // Weapons & Shields (common DS1 names)
                 'Drake Sword','Claymore','Longsword','Broadsword','Zweihander','Uchigatana','Iaito','Washing Pole','Balder Side Sword','Black Knight Sword','Black Knight Greatsword','Black Knight Halberd','Black Knight Greataxe','Gargoyle Tail Axe','Dragon King Greataxe','Dragon Tooth','Great Club','Large Club','Gravelord Sword','Greatsword of Artorias','Cursed Greatsword of Artorias','Abyss Greatsword','Moonlight Greatsword','Great Lord Greatsword','Chaos Blade','Quelaag\'s Furysword','Smough\'s Hammer','Dragonslayer Spear','Great Scythe','Halberd','Giant\'s Halberd','Demon\'s Spear','Pike','Partizan','Silver Knight Spear','Silver Knight Straight Sword','Silver Knight Shield','Grass Crest Shield','Crest Shield','Dragon Crest Shield','Havel\'s Greatshield','Black Iron Greatshield','Bloodshield','Eagle Shield','Spider Shield','Tower Kite Shield',
                 // Items & Key Items
-                'Estus Flask','Homeward Bone','Humanity','Green Titanite Shard','Titanite Shard','Large Titanite Shard','Titanite Chunk','Titanite Slab','Blue Titanite Chunk','Red Titanite Chunk','White Titanite Chunk','Blue Titanite Slab','Red Titanite Slab','White Titanite Slab','Large Ember','Very Large Ember','Divine Ember','Large Divine Ember','Occult Ember','Dark Ember','Enchanted Ember','Large Magic Ember','Large Fire Ember','Chaos Flame Ember','Rite of Kindling','Master Key','Basement Key','Mystery Key','Peculiar Doll','Lordvessel','Black Eye Orb','Covenant of Artorias',
+                'Estus Flask','Homeward Bone','Humanity','Green Titanite Shard','Titanite Shard','Large Titanite Shard','Titanite Chunk','Titanite Slab','Blue Titanite Chunk','Red Titanite Chunk','White Titanite Chunk','Blue Titanite Slab','Red Titanite Slab','White Titanite Slab','Large Ember','Very Large Ember','Divine Ember','Large Divine Ember','Occult Ember','Dark Ember','Enchanted Ember','Large Magic Ember','Large Fire Ember','Chaos Flame Ember','Rite of Kindling','Master Key','Basement Key','Mystery Key','Peculiar Doll','Lordvessel','Black Eye Orb','Covenant of Artorias','Firebomb','Titanite Scale','Soul of an Unknown',
+                // Armor
+                // Sets
+                'Black Iron Set','Master\'s Set','Anastasia\'s Armor set',
                 // Pyromancies
                 'Power Within','Great Chaos Fireball','Chaos Storm','Fireball','Fire Orb','Combustion','Great Combustion','Iron Flesh','Flash Sweat','Acid Surge','Fire Surge','Great Fireball','Great Firestorm','Fire Whip',
                 // Sorceries
-                'Soul Arrow','Great Soul Arrow','Heavy Soul Arrow','Great Heavy Soul Arrow','Aural Decoy','Fall Control','Hidden Weapon','Hidden Body','Cast Light','Repair','Chameleon','Homing Soulmass','Homing Crystal Soulmass','Soul Spear','Crystal Soul Spear','Magic Weapon','Great Magic Weapon','Crystal Magic Weapon','Magic Shield','Strong Magic Shield','Remedy',
+                'Soul Arrow','Great Soul Arrow','Heavy Soul Arrow','Great Heavy Soul Arrow','Aural Decoy','Fall Control','Hidden Weapon','Hidden Body','Cast Light','Repair','Chameleon','Homing Soulmass','Homing Crystal Soulmass','Soul Spear','Crystal Soul Spear','Magic Weapon','Great Magic Weapon','Crystal Magic Weapon','Magic Shield','Strong Magic Shield','Remedy','Vow of Silence',
                 // Miracles
                 'Heal','Great Heal','Great Heal Excerpt','Homeward','Force','Wrath of the Gods','Karmic Justice','Sunlight Blade','Lightning Spear','Great Lightning Spear',
                 // Monsters/Enemies
-                'Black Knight','Silver Knight','Balder Knight','Basilisk','Titanite Demon','Undead Dragon','Crow Demon','Hydra','Hellkite Drake','Stone Knight','Stone Guardian'
+                'Black Knight','Silver Knight','Balder Knight','Basilisk','Basilisks','Titanite Demon','Undead Dragon','Crow Demon','Hydra','Hellkite Drake','Stone Knight','Stone Guardian'
             ];
 
             // Map display -> URL slug differences
             var overrides = {
-                'Bell Gargoyles':'Bell+Gargoyles',
                 'Dragon Slayer Ornstein':'DragonSlayer+Ornstein',
                 'Executioner Smough':'Executioner+Smough',
-                'Great Grey Wolf Sif':'Great+Grey+Wolf+Sif',
+                'Sif':'Great+Grey+Wolf+Sif',
                 'Gwyn, Lord of Cinder':'Gwyn+Lord+of+Cinder',
                 'Undead Merchant (male)':'Undead+Merchant+%28Male%29',
-                'The Catacombs':'The+Catacombs',
-                'Great Lord Greatsword':'Great+Lord+Greatsword',
                 'Cursed Greatsword of Artorias':'Cursed+Greatsword+of+Artorias',
-                'Wrath of the Gods':'Wrath+of+the+Gods'
+                'Wrath of the Gods':'Wrath+of+the+Gods',
+                'Siegmeyer':'Siegmeyer+of+Catarina',
+                'Basilisks':'Basilisk',
+                'Chaos Witch Queelag':'Chaos+Witch+Quelaag',
+                'Queelag':'Chaos+Witch+Quelaag',
+                'Master\'s Set':'Master+Set',
+                'Anastasia\'s Armor set':'Anastasia+Armor+Set',
             };
 
             var makeUrl = function(name){
